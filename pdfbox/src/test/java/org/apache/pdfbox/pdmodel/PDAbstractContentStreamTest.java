@@ -139,7 +139,8 @@ public class PDAbstractContentStreamTest
 
         String getOutput()
         {
-            return new String(((ByteArrayOutputStream) outputStream).toByteArray(), StandardCharsets.US_ASCII);
+            // Use UTF-8 as requested
+            return new String(((ByteArrayOutputStream) outputStream).toByteArray(), StandardCharsets.UTF_8);
         }
 
         void callBeginText() throws IOException { beginText(); }
